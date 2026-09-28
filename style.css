@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Latar Belakang Animasi Hati */
+#hearts-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -10vh;
+    color: #ff4d6d;
+    font-size: 1.5rem;
+    animation: floatUp linear forwards;
+    opacity: 0.6;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(0.5); opacity: 0.8; }
+    100% { transform: translateY(-110vh) scale(1.2); opacity: 0; }
+}
+
+/* Layout Kartu Utama */
+.container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 400px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 15px 25px rgba(255, 117, 140, 0.2);
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+h2 {
+    color: #c9184a;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Desain Kado Kustom yang Presisi */
+.kado-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 30px auto 10px;
+    cursor: pointer;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.kado-wrapper:hover, .kado-wrapper:active {
+    transform: scale(1.1);
+}
+
+.kotak-kado {
+    width: 100%;
+    height: 100%;
+    background-color: #ff0a54;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 10px 15px rgba(255, 10, 84, 0.3);
+    overflow: hidden;
+}
+
+.pita-vertikal {
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    background-color: #ffea00;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pita-horizontal {
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    background-color: #ffea00;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pita-atas-kiri, .pita-atas-kanan {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 8px solid #ffea00;
+    border-radius: 50%;
+    top: -20px;
+    z-index: -1;
+}
+
+.pita-atas-kiri { left: 15px; }
+.pita-atas-kanan { right: 15px; }
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: #ff4d6d;
+    margin-top: 10px;
+}
+
+/* Slider Sayang Presisi */
+.persentase {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff0a54;
+    margin: 10px 0;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 12px;
+    background: #ffd6e0;
+    border-radius: 10px;
+    outline: none;
+    margin: 20px 0;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    background: #ff0a54;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 10, 84, 0.4);
+    border: 3px solid white;
+}
+
+.pesan-rating {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #c9184a;
+    min-height: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tombol */
+.btn {
+    background: #ff0a54;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 10, 84, 0.4);
+    transition: 0.3s;
+    width: 100%;
+}
+
+.btn:active { transform: scale(0.95); }
+.btn.hidden { display: none; }
+
+.btn-outline {
+    background: transparent;
+    color: #ff0a54;
+    border: 2px solid #ff0a54;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* List Kata-kata */
+.list-pesan {
+    max-height: 250px;
+    overflow-y: auto;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.item-pesan {
+    background: white;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    color: #444;
+    border-left: 4px solid #ff0a54;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Kustomisasi Scrollbar untuk Webkit */
+.list-pesan::-webkit-scrollbar { width: 5px; }
+.list-pesan::-webkit-scrollbar-thumb { background: #ff4d6d; border-radius: 10px; }
+  
