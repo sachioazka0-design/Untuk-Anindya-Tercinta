@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kado Spesial ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Latar Belakang Love -->
+    <div id="hearts-bg"></div>
+
+    <div class="container">
+        <!-- STEP 1: Kado -->
+        <div id="step-1" class="card active">
+            <h2>tekan kadonya yaa sayang ❤️</h2>
+            <div class="kado-wrapper" id="kado">
+                <div class="pita-atas-kiri"></div>
+                <div class="pita-atas-kanan"></div>
+                <div class="kotak-kado">
+                    <div class="pita-vertikal"></div>
+                    <div class="pita-horizontal"></div>
+                </div>
+            </div>
+            <p class="hint">(Sentuh kadonya)</p>
+        </div>
+
+        <!-- STEP 2: Rating Sayang -->
+        <div id="step-2" class="card hidden">
+            <h2>seberapa sayang kamu sama aku? 🥺💖</h2>
+            <div class="persentase" id="nilai-persentase">0%</div>
+            
+            <input type="range" id="slider-sayang" min="0" max="100" value="0">
+            
+            <div class="pesan-rating" id="pesan-rating">
+                geser garisnya yaa...
+            </div>
+            
+            <button id="btn-buka" class="btn hidden">buka kado 🎁</button>
+        </div>
+
+        <!-- STEP 3: Pesan Manis -->
+        <div id="step-3" class="card hidden">
+            <h2>Yeay! Ini buat kamu 🥰</h2>
+            <div class="list-pesan" id="list-pesan">
+                <!-- Pesan akan muncul di sini via JS -->
+            </div>
+            <button id="btn-ulang" class="btn-outline">Ulangi ❤️</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+  </html>
+  
